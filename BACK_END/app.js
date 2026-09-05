@@ -8,6 +8,8 @@ const placesRoutes = require("./routes/places-routes");
 const usersRoutes = require("./routes/users-routes");
 const HttpError = require("./models/http-error");
 const app = express();
+const dns = require('dns');
+dns.setServers(['8.8.8.8', '8.8.4.4']);
 app.use(cors());
 app.use(bodyParser.json());
 app.use("/uploads/images",express.static(path.join(__dirname,"uploads","images")));

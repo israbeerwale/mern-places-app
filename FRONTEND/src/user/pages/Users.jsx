@@ -4,13 +4,14 @@ import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 import { useHttpClient } from "../../shared/hooks/http-hook";
 const Users = () => {
+  console.log("ENV CHECK:", import.meta.env.VITE_BACKEND_URL);
   const {isLoading,error, sendRequest, clearError} = useHttpClient();
   const [loadedUsers, setLoadedUsers] = useState();
   useEffect(() => {
     const fetchUsers = async () => {
       
       try {
-        const responseData = await sendRequest(import.meta.env.VITE_BACKEND_URL + "/users");
+        const responseData = await sendRequest(import.meta.env.VITE_BACKEND_URL+ "/users");
         console.log("responseData:",responseData);
         if (responseData){
           setLoadedUsers(responseData.users);
