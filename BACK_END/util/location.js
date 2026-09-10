@@ -8,7 +8,7 @@ async function getCoordsForAddress(address) {
     {
       params:{
         q:address,
-        key: Process.env.OPENCAGE_API_KEY,
+        key: process.env.OPENCAGE_API_KEY,
         limit:1,
       },
     }
