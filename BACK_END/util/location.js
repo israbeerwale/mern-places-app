@@ -4,11 +4,11 @@ const HttpError = require("../models/http-error");
 async function getCoordsForAddress(address) {
   //console.log("API KEY:",API_KEY);
   const response = await axios.get(
-    `https://api.opencagedata.com/geocoding/v1/json`,
+    `https://api.opencagedata.com/geocode/v1/json`,
     {
       params:{
         q:address,
-        key: process.env.OPENCAGE_API_KEY,
+        key:process.env.OPENCAGE_API_KEY,
         limit:1,
       },
     }
